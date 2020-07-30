@@ -7,20 +7,25 @@ function checkForStorage(){
 function putHistory(data){
 	if(checkForStorage()){
 		let historyData = null;
+		console.log(historyData)
 		if(localStorage.getItem(CACHE_KEY) === null){
 			historyData = []
 		}else {
-			historyData.JSON.parse(localStorage.getItem(CACHE_KEY))
+			historyData = JSON.parse(localStorage.getItem(CACHE_KEY))
 		}
+		historyData.unshift(data)
+
+
+		if(historyData.length > 5){
+			historyData.pop()
+		}
+
+		localStorage.setItem(CACHE_KEY,JSON.stringify(historyData))
 	}
 
-	historyData.unshift(data)
+	
 
-	if(historyData.length > 5){
-		historyData.pop()
-	}
-
-	localStorage.setItem(CACHE_KEY,JSON.stringify(historyData))
+	
 }
 
 function showHistory(){
@@ -32,7 +37,7 @@ function showHistory(){
 }
 
 function renderHistory(){
-	const historyData = showHistory(	)
+	const historyData = showHistory()
 	let historyList = document.querySelector('#historyList')
 
 	// selalu hapus konten HTML pada elemen historylist agar tidak menampilkan data ganda

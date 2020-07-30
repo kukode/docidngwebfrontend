@@ -1,3 +1,4 @@
+
 const calculator = {
 	displayNumber : '0',
 	operator : null,
@@ -63,15 +64,15 @@ function performCalculator(){
 	
 	// objek yang akan dikirimkan sebagai argumen fungsi putHistory()
 
-	// const history = {
-	// 	firstNumber : calculator.firstNumber,
-	// 	secondNumber : calculator.displayNumber,
-	// 	operator : calculator.operator,
-	// 	result : result
-	// }
-	// putHistory(history)
+	const history = {
+		firstNumber : calculator.firstNumber,
+		secondNumber : calculator.displayNumber,
+		operator : calculator.operator,
+		result : result
+	}
+	putHistory(history)
 	calculator.displayNumber = result
-	// renderHistory()
+	renderHistory()
 }
 
 const buttons = document.querySelectorAll(".button");
@@ -113,3 +114,7 @@ for(let button of buttons){
 	})
 }
 
+
+function myFunction() {
+  alert("I am an alert box!");
+}
