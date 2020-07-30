@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body{
+	font-family: 'Quicksand', sans-serif;
+	margin:0;
+	padding: 0;	
+}
+
+header{
+	display: inline;
+}
+
+h2{
+	color:#fff;
+}
+
+figcaption{
+	color: #fff;
+	text-align: center;
+}
+
+div.jumbotron{
+	background-color: #343574;
+	color: #fff;
+	text-align: center;
+	padding: 60px;
+}
+
+nav li{
+	display: inline;
+	list-style-type: none;
+	margin-right: 20px;
+}
+
+nav{
+	background-color: #202148;
+	top: 0;
+	position: sticky;
+	padding: 5px;
+}
+nav a{
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.card{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,2);
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
+	background-color: #6162FB;
+}
+
+#content{
+	width: 70%;
+	float: left;
+}
+
+aside{
+	float: right;
+	width: 25%;
+	padding-left: 10px;
+	color: #fff;
+}
+
+footer {
+   padding: 20px;
+   color: white;
+   background-color: #343574;
+   text-align: center;
+}
+
+main{
+	padding:20px;
+	overflow: auto;
+}
+
+aside article ul li{
+	list-style-type: none;
+	padding-bottom: 5px;
+}
+
+aside article ul li a{
+	text-decoration: none;
+	color: white;
+
+}
+
+.profile img{
+	width: 200px;
+
+}
+
+@media screen and (max-width: 1000px){
+	#content,
+	aside{
+		width: 100%;
+		padding: 0;
+	}
+}
+
+section p{
+	color: white;
+}
+
+/**
+css flexbox
+**/
+
+*{
+	box-sizing: border-box;
+}
+
+#container{
+	margin:0 auto;
+}
+
+#flex-column{
+	display: flex;
+	flex-direction: column;
+}
+
+#flex-row{
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+}
+
+#box{
+	flex-grow: 1;
+	color: white;
+}
