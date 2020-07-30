@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>local storage</title>
+</head>
+<body>
+	<p>anda sudah menekan tombol sebanyak <span id="count"></span>kali</p>
+	<button id="button">klik disini</button>
+	<button id="clear">clear</button>
+
+
+
+	<script type="text/javascript">
+		const cacheKey = "NUMBER"
+
+		if(typeof(Storage) !== "undefined"){
+			// cek apakah data pada localStorage dengan key NUMBER sudah tersedia atau belum
+
+			if(localStorage.getItem(cacheKey) === "undefined"){
+				// jika belum maka nilai awal akan di atur menjadi 0
+				localStorage.setItem(cacheKey,0)
+			}
+
+			const button  = document.querySelector('#button')
+			const clearButton = document.querySelector('#clear')
+			const count = document.querySelector('#count')
+			
+			button.addEventListener('click',function(event){
+				let number = localStorage.getItem(cacheKey)
+				number++
+				localStorage.setItem(cacheKey,number)
+
+				count.innerText = localStorage.getItem(cacheKey)
+			})
+
+			clearButton.addEventListener('click',function(event){
+				localStorage.removeItem(cacheKey)
+			})
+
+		}else {
+			alert('browser tidak mendung storage')
+		}
+	</script>
+</body>
+</html>
